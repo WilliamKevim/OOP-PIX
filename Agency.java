@@ -2,10 +2,10 @@ public class Agency{
     public String codigoAg;
     public listaClients Client[];
     
-    public Bank(){
+    public Agency(){
     }
 
-    public Bank(String codigoAg){
+    public Agency(String codigoAg){
         this.codigoAg = codigoAg;    
     }
 
@@ -18,7 +18,7 @@ public class Agency{
     }
 
     public criarCliente(){
-
+         
     }
     public deletarCliente(){
 
