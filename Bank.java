@@ -17,24 +17,31 @@ public class Bank{
         return codigo;
     }
 
-    public criarNovaAg(){
-
+    public String getlistaAgenca(){
+        return listaAgencia;
     }
 
-    public deletarAg(){
-        
+    public criarNovaAg(String codigoAg){
+        Agencia Agencianova = new Agencia();
+        Agencianova.setCodigoAg(codigoAg);
+        Agencia.setlistaclientes([]) 
+        listaAgenca Agencia[Agencianova];
+    }
+
+    public deletarAg(String codigoAg){
+        for(i=0; i < listadeagencia.length;++i){
+            if (listadeagencia[i].getcodigoAg == codigoAg){
+                listadeagencia[i].remove;
+            }
+        }
     }
 
     public consultarAg(){
-        
-    }
-
-    public gerarPix(){
-        
-    }
-
-    public modificarDados(){
-        
+        for(i=0; i < listadeagencia.length;++i){
+            if (listadeagencia[i].getcodigoAg == codigoAg){
+                return listadeagencia[i];
+            }
+        }
     }
 
 }

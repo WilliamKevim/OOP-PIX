@@ -1,5 +1,5 @@
 public class Conta {
-    private float saldo;
+    private double saldo;
     private listaPix[] Pix[];
     private String numero;
 
@@ -12,15 +12,28 @@ public class Conta {
     }
 
 
-    private boolean saque(){
-    
+    private boolean saque(double valorsaque){
+        if (valorsaque <= saldo){
+            saldo -= valorsaque;
+            return true;
+        }else return false;
     }
 
-    private boolean deposito(){
-
+    private boolean deposito(double valordeposito){
+        if (valordeposito > 0){
+            saldo += valordeposito;
+            return true;
+        }else return false;
     }
 
-    private boolean transferencia(){
-
-    } 
+    public boolean transferencia(String pix, double valortransferencia){
+        Cliente cliente = CentralBank.consultarCliente(pix);
+        if(cliente instanceof ContaSalario){
+            if(getpix() == cliente.getEmpregador().getpix()){
+                return cliente.depositar(valortransferencia);
+            }
+        else{
+            return cliente.depositar(valortransferencia);
+        }
+    }
 }
